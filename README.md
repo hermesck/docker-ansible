@@ -9,11 +9,6 @@ Start terminal with prepared Ansible enviroment
 docker run -it --rm -h docker-ansible hermesck/ansible /bin/bash
 ```
 
-Create hosts file with localhost only for testing
-```
-echo -e "[local]\nlocalhost\n192.168.1.1" > /etc/ansible/hosts
-```
-
 Test ansible command
 ```
 ansible all -m ping
