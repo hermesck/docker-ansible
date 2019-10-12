@@ -9,6 +9,4 @@ RUN apt-get update && \
     
 COPY bin/* /root/bin/
 
-VOLUME ["/etc/ansible", "/root/bin", "/root/.ssh", "/root/work"]
-
 WORKDIR /root/work
