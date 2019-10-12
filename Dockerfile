@@ -4,13 +4,11 @@ RUN apt-get update && \
     apt-get install --no-install-recommends -y software-properties-common && \
     apt-add-repository ppa:ansible/ansible && \
     apt-get update && \
-    apt-get install -y ansible git mc nano wget curl
-
-RUN echo '[local]\nlocalhost\n' > /etc/ansible/hosts && \
-    mkdir /root/ansible-bin && mkdir /root/ansible-work
+    apt-get install -y ansible git mc nano wget curl && \
+    mkdir /root/bin && mkdir /root/work
     
-COPY bin/* /root/ansible-bin/
+COPY bin/* /root/bin/
 
-VOLUME ["/etc/ansible", "/root/ansible-bin", "/root/ansible-work"]
+VOLUME ["/etc/ansible", "/root/bin", "/root/.ssh", "/root/work"]
 
-WORKDIR /root/ansible-work
+WORKDIR /root/work
