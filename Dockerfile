@@ -11,4 +11,6 @@ RUN apt-get update && \
 
 COPY bin/* /root/bin/
 
+RUN echo PS1="\[\e[32m\]\u\[\e[m\]\[\e[32m\]@\[\e[m\]\[\e[31m\]\h\[\e[m\]\[\e[37m\]:\[\e[m\]\[\e[34m\]\w\[\e[m\] \[\e[33m\]\\$\[\e[m\] " >> ~/.bashrc
+
 WORKDIR /root/work
