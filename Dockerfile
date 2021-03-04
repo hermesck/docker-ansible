@@ -12,7 +12,7 @@ RUN apt-get update && \
 COPY bin/* /root/bin/
 
 # Custom colored prompt - used ENV to avoid escaping in RUN command 
-ENV PS1A="\[\033[38;5;12m\]\u\[$(tput sgr0)\]\[\033[38;5;7m\]@\[$(tput sgr0)\]\[\033[38;5;9m\]\h\[$(tput sgr0)\]\[\033[38;5;7m\]:[\[$(tput sgr0)\]\[\033[38;5;10m\]\w\[$(tput sgr0)\]\[\033[38;5;7m\]]\[$(tput sgr0)\]\[\033[38;5;11m\]\\$\[$(tput sgr0)\]"
+ENV PS1A="\[\033[38;5;12m\]docker\[$(tput sgr0)\]\[\033[38;5;7m\]@\[$(tput sgr0)\]\[\033[38;5;9m\]\h\[$(tput sgr0)\]\[\033[38;5;7m\]:[\[$(tput sgr0)\]\[\033[38;5;10m\]\w\[$(tput sgr0)\]\[\033[38;5;7m\]]\[$(tput sgr0)\]\[\033[38;5;11m\]> \[$(tput sgr0)\]"
 RUN echo 'PS1=$PS1A' >> ~/.bashrc
 
 WORKDIR /root/work
