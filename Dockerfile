@@ -6,7 +6,7 @@ RUN apt-get update && \
     apt-get install -y tzdata && \
     ln -fs /usr/share/zoneinfo/Europe/Prague /etc/localtime && \
     dpkg-reconfigure --frontend noninteractive tzdata && \
-    apt-get install -y ansible git mc nano wget curl sshpass && \
+    apt-get install -y ansible git mc nano wget curl sshpass rsync && \
     mkdir /root/bin && mkdir /root/work
 
 COPY bin/* /root/bin/
